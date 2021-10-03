@@ -3,7 +3,7 @@ import tkinter as tk
 from tkinter import Button, Entry, Label, Message, StringVar, ttk
 from tkinter import messagebox
 import sqlite3
-# return a list from sql statement #cuongdeptrai
+# return a list from sql statement 
 def returnlist(s):
     con = sqlite3.connect('QuanLySinhVien.db')
     cur = con.cursor()
