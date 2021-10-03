@@ -17,7 +17,7 @@ def commitsql(s):
         cur = cur.execute(s)
         con.commit()
     except sqlite3.Error as e:
-        messagebox.showerror(e,e)
+        messagebox.showerror("Error",e)
 # create a string
 def chuoi(id, name, address, phone, clas):
     s = ""
@@ -55,11 +55,19 @@ def ok(f):
         s = s + "WHERE" + chuoi("","","","",data.get())
     settree(returnlist(s))
 
+
+
+
+
+
 def okinsert():
     pass
 def okdelete():
     pass
 def okupdate():
+    if (name.get()+address.get()+phone.get()+clas.get()=="" or id.get()==""):
+        messagebox.showerror("Error", "Chưa nhập đủ")
+        return
     s = "UPDATE Student SET" + chuoi("",name.get(), address.get(), phone.get(), clas.get()) + " WHERE" + chuoi(id.get(),"","","","")
     print(s)
     commitsql(s)
@@ -67,6 +75,11 @@ def okupdate():
 def oksearch():
     s = "SELECT * FROM Student WHERE" + chuoi(id.get(), name.get(), address.get(), phone.get(), clas.get())    
     settree(returnlist(s))
+
+
+
+
+
 
 
 
