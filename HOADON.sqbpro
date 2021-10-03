@@ -1,0 +1,57 @@
+<?xml version="1.0" encoding="UTF-8"?><sqlb_project><db path="C:/Users/Tran Quang Khai/OneDrive/Desktop/py_sql/HOADON.db" readonly="0" foreign_keys="1" case_sensitive_like="0" temp_store="0" wal_autocheckpoint="1000" synchronous="2"/><attached/><window><main_tabs open="structure browser pragmas query" current="3"/></window><tab_structure><column_width id="0" width="300"/><column_width id="1" width="0"/><column_width id="2" width="125"/><column_width id="3" width="1385"/><column_width id="4" width="0"/><expanded_item id="0" parent="1"/><expanded_item id="0" parent="0"/><expanded_item id="1" parent="1"/><expanded_item id="2" parent="1"/><expanded_item id="3" parent="1"/></tab_structure><tab_browse><current_table name="4,6:mainHOADON"/><default_encoding codec=""/><browse_table_settings><table schema="main" name="CTHD" show_row_id="0" encoding="" plot_x_axis="" unlock_view_pk="_rowid_"><sort/><column_widths><column index="1" value="63"/><column index="2" value="63"/><column index="3" value="52"/></column_widths><filter_values/><conditional_formats/><row_id_formats/><display_formats/><hidden_columns/><plot_y_axes/><global_filter/></table><table schema="main" name="HANG" show_row_id="0" encoding="" plot_x_axis="" unlock_view_pk="_rowid_"><sort/><column_widths><column index="1" value="60"/><column index="2" value="63"/><column index="3" value="69"/><column index="4" value="82"/></column_widths><filter_values/><conditional_formats/><row_id_formats/><display_formats/><hidden_columns/><plot_y_axes/><global_filter/></table><table schema="main" name="HOADON" show_row_id="0" encoding="" plot_x_axis="" unlock_view_pk="_rowid_"><sort/><column_widths><column index="1" value="63"/><column index="2" value="92"/><column index="3" value="300"/></column_widths><filter_values/><conditional_formats/><row_id_formats/><display_formats/><hidden_columns/><plot_y_axes/><global_filter/></table></browse_table_settings></tab_browse><tab_sql><sql name="SQL 1">
+
+INSERT INTO HANG
+VALUES
+('L03','H21','Bánh A',10000),
+('L03','H22','Bánh B',20000),
+('L03','H23','Bánh C',30000),
+('L03','H24','Bánh D',40000),
+('L03','H25','Bánh E',41000),
+('L03','H26','Bánh F',42000),
+('L03','H27','Bánh G',43000),
+('L03','H28','Bánh H',44000),
+('L03','H29','Bánh I',45000),
+('L03','H30','Bánh K',46000),
+('L03','H31','Bánh L',47000),
+('L03','H32','Bánh M',48000),
+('L03','H33','Bánh N',49000),
+('L03','H34','Bánh O',50000),
+('L03','H35','Bánh Z',52000);
+
+INSERT INTO HANG
+VALUES
+('L04','H36','Nước A',10000),
+('L04','H37','Nước B',11000),
+('L04','H38','Nước C',12000),
+('L04','H39','Nước D',13000),
+('L04','H40','Nước E',14000),
+('L04','H41','Nước F',15000),
+('L04','H42','Nước G',16000),
+('L04','H43','Nước H',17000),
+('L04','H44','Nước I',18000),
+('L04','H45','Nước K',19000),
+('L04','H46','Nước L',20000),
+('L04','H47','Nước M',21000),
+('L04','H48','Nước N',22000),
+('L04','H49','Nước O',23000),
+('L04','H50','Nước Z',24000);
+
+INSERT INTO HOADON 
+VALUES
+('D03','2021-05-19','Nước A, Nước B, Bánh C, Bánh D, Nước F'),
+('D04','2021-04-20','Nước E, Nước F, Nước D, Bánh F, Bánh G');
+
+INSERT INTO CTHD 
+VALUES 
+('D03','H36',10),
+('D03','H37',11),
+('D03','H23',12),
+('D03','H24',13),
+('D03','H41',14),
+('D04','H40',15),
+('D04','H41',16),
+('D04','H39',17),
+('D04','H26',18),
+('D04','H27',19);
+
+</sql><current_tab id="0"/></tab_sql></sqlb_project>

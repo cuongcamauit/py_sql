@@ -61,7 +61,13 @@ def ok(f):
 
 
 def okinsert():
-    pass
+    if (name.get()+address.get()+phone.get()+clas.get()=="" or id.get()==""):
+        messagebox.showerror("Error", "Chưa nhập đủ")
+        return
+    s = "INSERT INTO Student VALUES("+ id.get() +','+ name.get() +','+ address.get()+ ',' + phone.get() + ',' + clas.get()+');'
+    print(s)
+    commitsql(s)
+    settree(returnlist("SELECT * FROM Student "))
 def okdelete():
     pass
 def okupdate():
