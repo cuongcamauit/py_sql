@@ -73,6 +73,10 @@ def okupdate():
     commitsql(s)
     settree(returnlist("SELECT * FROM Student WHERE" + chuoi("","","","",data.get())))
 def oksearch():
+    if (name.get()+address.get()+phone.get()+clas.get()+id.get()==""):
+        messagebox.showerror("Error", "Chưa nhập đủ")
+        return
+
     s = "SELECT * FROM Student WHERE" + chuoi(id.get(), name.get(), address.get(), phone.get(), clas.get())    
     settree(returnlist(s))
 
