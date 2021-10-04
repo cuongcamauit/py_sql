@@ -1,4 +1,62 @@
-<?xml version="1.0" encoding="UTF-8"?><sqlb_project><db path="C:/Users/Tran Quang Khai/OneDrive/Desktop/py_sql/HOADON.db" readonly="0" foreign_keys="1" case_sensitive_like="0" temp_store="0" wal_autocheckpoint="1000" synchronous="2"/><attached/><window><main_tabs open="structure browser pragmas query" current="3"/></window><tab_structure><column_width id="0" width="300"/><column_width id="1" width="0"/><column_width id="2" width="125"/><column_width id="3" width="1385"/><column_width id="4" width="0"/><expanded_item id="0" parent="1"/><expanded_item id="0" parent="0"/><expanded_item id="1" parent="1"/><expanded_item id="2" parent="1"/><expanded_item id="3" parent="1"/></tab_structure><tab_browse><current_table name="4,6:mainHOADON"/><default_encoding codec=""/><browse_table_settings><table schema="main" name="CTHD" show_row_id="0" encoding="" plot_x_axis="" unlock_view_pk="_rowid_"><sort/><column_widths><column index="1" value="63"/><column index="2" value="63"/><column index="3" value="52"/></column_widths><filter_values/><conditional_formats/><row_id_formats/><display_formats/><hidden_columns/><plot_y_axes/><global_filter/></table><table schema="main" name="HANG" show_row_id="0" encoding="" plot_x_axis="" unlock_view_pk="_rowid_"><sort/><column_widths><column index="1" value="60"/><column index="2" value="63"/><column index="3" value="69"/><column index="4" value="82"/></column_widths><filter_values/><conditional_formats/><row_id_formats/><display_formats/><hidden_columns/><plot_y_axes/><global_filter/></table><table schema="main" name="HOADON" show_row_id="0" encoding="" plot_x_axis="" unlock_view_pk="_rowid_"><sort/><column_widths><column index="1" value="63"/><column index="2" value="92"/><column index="3" value="300"/></column_widths><filter_values/><conditional_formats/><row_id_formats/><display_formats/><hidden_columns/><plot_y_axes/><global_filter/></table></browse_table_settings></tab_browse><tab_sql><sql name="SQL 1">
+<?xml version="1.0" encoding="UTF-8"?><sqlb_project><db path="C:/Users/Tran Quang Khai/OneDrive/Desktop/py_sql/HOADON.db" readonly="0" foreign_keys="1" case_sensitive_like="0" temp_store="0" wal_autocheckpoint="1000" synchronous="2"/><attached/><window><main_tabs open="structure browser pragmas query" current="0"/></window><tab_structure><column_width id="0" width="300"/><column_width id="1" width="0"/><column_width id="2" width="125"/><column_width id="3" width="1385"/><column_width id="4" width="0"/><expanded_item id="0" parent="1"/><expanded_item id="1" parent="1"/><expanded_item id="2" parent="1"/><expanded_item id="3" parent="1"/></tab_structure><tab_browse><current_table name="4,6:mainLOAIHG"/><default_encoding codec=""/><browse_table_settings><table schema="main" name="CTHD" show_row_id="0" encoding="" plot_x_axis="" unlock_view_pk="_rowid_"><sort/><column_widths><column index="1" value="63"/><column index="2" value="63"/><column index="3" value="52"/></column_widths><filter_values/><conditional_formats/><row_id_formats/><display_formats/><hidden_columns/><plot_y_axes/><global_filter/></table><table schema="main" name="HANG" show_row_id="0" encoding="" plot_x_axis="" unlock_view_pk="_rowid_"><sort/><column_widths><column index="1" value="60"/><column index="2" value="63"/><column index="3" value="149"/><column index="4" value="82"/></column_widths><filter_values/><conditional_formats/><row_id_formats/><display_formats/><hidden_columns/><plot_y_axes/><global_filter/></table><table schema="main" name="HOADON" show_row_id="0" encoding="" plot_x_axis="" unlock_view_pk="_rowid_"><sort/><column_widths><column index="1" value="63"/><column index="2" value="92"/><column index="3" value="300"/></column_widths><filter_values/><conditional_formats/><row_id_formats/><display_formats/><hidden_columns/><plot_y_axes/><global_filter/></table><table schema="main" name="LOAIHG" show_row_id="0" encoding="" plot_x_axis="" unlock_view_pk="_rowid_"><sort/><column_widths><column index="1" value="60"/><column index="2" value="156"/></column_widths><filter_values/><conditional_formats/><row_id_formats/><display_formats/><hidden_columns/><plot_y_axes/><global_filter/></table></browse_table_settings></tab_browse><tab_sql><sql name="SQL 1">INSERT INTO LOAIHG
+VALUES 
+('L01','THỨC ĂN');
+INSERT INTO LOAIHG
+VALUES
+('L02','ĐỒ DÙNG CÁ NHÂN');
+INSERT INTO HANG
+VALUES 
+('L01','H01','cá',50000),
+('L01','H02','thịt',60000),
+('L01','H03','rau',20000),
+('L01','H04','củ',20000),
+('L01','H05','quả',25000),
+('L01','H06','cà chua',5000),
+('L01','H07','khoai tây',10000),
+('L01','H08','bắp',5000),
+('L01','H09','chân gà',50000),
+('L01','H10','mực',90000),
+('L02','H11','dao cạo râu',5000),
+('L02','H12','lưỡi lam',1000),
+('L02','H13','kem đánh răng',37000),
+('L02','H14','bàn chải đánh răng',15000),
+('L02','H15','bàn chải',22000),
+('L02','H16','xà bông',17000),
+('L02','H17','khăn tắm',21000),
+('L02','H18','khăn lau mặt',22000),
+('L02','H19','máy mát xa mặt',27000),
+('L02','H20','kính râm',28000);
+INSERT INTO HOADON
+VALUES 
+('D01','2021-08-19','cá, thịt, rau , củ, quả, cà chua, khoai tây, bắp, chân gà, mực'),
+('D02','2021-08-20','dao cạo râu, lưỡi lam, kem đánh răng, bàn chải đánh răng, bàn chải, xà bông, khăn tắm, khăn lau mặt, máy mát xa mặt, kính râm');
+
+
+INSERT INTO CTHD
+VALUES 
+('D01','H01',1),
+('D01','H02',2),
+('D01','H03',3),
+('D01','H04',4),
+('D01','H05',5),
+('D01','H06',6),
+('D01','H07',7),
+('D01','H08',8),
+('D01','H09',9),
+('D01','H10',10),
+('D02','H11',11),
+('D02','H12',12),
+('D02','H13',13),
+('D02','H14',14),
+('D02','H15',15),
+('D02','H16',16),
+('D02','H17',17),
+('D02','H18',18),
+('D02','H19',19),
+('D02','H20',20);</sql><sql name="SQL 2">INSERT INTO LOAIHG
+VALUES 
+('L03','Bánh'),
+('L04','Nước Giải Khát');
 
 INSERT INTO HANG
 VALUES
@@ -52,6 +110,50 @@ VALUES
 ('D04','H41',16),
 ('D04','H39',17),
 ('D04','H26',18),
-('D04','H27',19);
+('D04','H27',19);</sql><sql name="SQL 3">INSERT INTO LOAIHG
+VALUES 
+('L05','Mi an lien');
+INSERT INTO LOAIHG
+VALUES
+('L06',' Sữa các loại');
+INSERT INTO HANG
+VALUES 
+('L06','H61','Dutch Lady',5000),
+('L06','H62','TH true Milk',7000),
+('L06','H63','Nestlé',8000),
+('L06','H64','Nutimilk',9000),
+('L06','H65','Dalat Milk',10000),
+('L06','H66','Nuvita',11000),
+('L06','H67','Pure Milk',12000),
+('L06','H68','Vinamilk',13000),
+('L06','H69','Green Fram',5500),
+('L06','H70','Australias Own',6500);
 
-</sql><current_tab id="0"/></tab_sql></sqlb_project>
+INSERT INTO HOADON
+VALUES 
+('D05','2021-08-20','Hảo hảo, 3 miền, Mordern lẩu tôm, Cung đình, Siukay, omachi, nissin, Koreno, Samyang, Kokomi'),
+('D06','2021-09-20','Dutch Lady, TH True, Nestlé, Nutimilk, Dalat Milk, Nuvita, Pure Milk, Vinamilk, Green Fram, Australias Own');
+
+
+INSERT INTO CTHD
+VALUES 
+('D05','H51',51),
+('D05','H52',52),
+('D05','H53',53),
+('D05','H54',54),
+('D05','H55',55),
+('D05','H56',56),
+('D05','H57',57),
+('D05','H58',58),
+('D05','H59',59),
+('D05','H60',60),
+('D06','H61',61),
+('D06','H62',62),
+('D06','H63',63),
+('D06','H64',64),
+('D06','H65',65),
+('D06','H66',66),
+('D06','H67',67),
+('D06','H68',68),
+('D06','H69',69),
+('D06','H60',70);</sql><current_tab id="2"/></tab_sql></sqlb_project>
