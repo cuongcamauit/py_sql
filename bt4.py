@@ -174,5 +174,9 @@ class App(tk.Tk):
         frame1(self).pack()
         frame2(self).pack()
         frame3(self).pack()
+        self.configure(bg="pink")
+        self.geometry("1000x500")
+        self.title("github.com/cuongcamauit")
+
 ap = App()
 ap.mainloop()
