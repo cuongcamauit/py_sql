@@ -55,9 +55,6 @@ def ok(f):
     if (data.get()!='All'):
         s = s + "WHERE" + chuoi("","","","",data.get())
     settree(returnlist(s))
-
-
-
 def okinsert():
     s = "INSERT INTO Student VALUES('%s','%s','%s',%s,'%s');" %(id.get(), name.get(), address.get(), phone.get(), clas.get())
     print(s)
@@ -74,25 +71,17 @@ def oksearch():
     s = "SELECT * FROM Student WHERE" + chuoi(id.get(), name.get(), address.get(), phone.get(), clas.get())    
     print(s)
     settree(returnlist(s))
-
-
-
-
-
-
-
-
-
-
-
 def insert():
     ap = app2("insert", okinsert)
+    clas.set(data.get())
     ap.mainloop()
 def delete():
     ap = app2("delete", okdelete)
+    clas.set(data.get())
     ap.mainloop()
 def update():
     ap = app2("update", okupdate)
+    clas.set(data.get())
     ap.mainloop()
 def search():
     ap = app2("search", oksearch)
@@ -102,34 +91,35 @@ def xuat():
 class app2(tk.Toplevel):
     def __init__(self,st,dk, *args, **kwargs):
         super().__init__(*args, **kwargs)
-        global id, name, address, phone, clas
+        global id, name, address, phone, clas, combox2
         id=StringVar() 
         name=StringVar()
         address=StringVar()
         phone=StringVar()
         clas= StringVar()
         self.title(st)
-        Label(self, text="StudentID").grid(row=0, column=0)
-        Entry(self, textvariable=id).grid(row=0, column=1)
-        Label(self, text="StudentName").grid(row=1, column=0)
-        Entry(self, textvariable=name).grid(row=1, column=1)
-        Label(self, text="StudentAddress").grid(row=2, column=0)
-        Entry(self, textvariable=address).grid(row=2, column=1)
-        Label(self, text="PhoneNumber").grid(row=3, column=0)
-        Entry(self, textvariable=phone).grid(row=3, column=1)
-        Label(self, text="ClassID").grid(row=4, column=0)
-        Entry(self, textvariable=clas).grid(row=4, column=1)
-        Button(self, text="OK", command=dk).grid(row=5, column=0)
-        Button(self, text="Quit", command=self.destroy).grid(row=5, column=1)
-
-
-
-
+        Label(self, text="StudentID", width=15).grid(row=0, column=0)
+        Entry(self, textvariable=id).grid(row=0, column=1, sticky=tk.E + tk.W)
+        Label(self, text="StudentName", width=15).grid(row=1, column=0)
+        Entry(self, textvariable=name).grid(row=1, column=1, sticky=tk.E + tk.W)
+        Label(self, text="StudentAddress", width=15).grid(row=2, column=0)
+        Entry(self, textvariable=address).grid(row=2, column=1, sticky=tk.E + tk.W)
+        Label(self, text="PhoneNumber", width=15).grid(row=3, column=0)
+        Entry(self, textvariable=phone).grid(row=3, column=1, sticky=tk.E + tk.W)
+        Label(self, text="ClassID", width=15).grid(row=4, column=0)
+        lst2 = ("L01", "L02", "L03", "L04", "L05")
+        combox2 = ttk.Combobox(self, textvariable=clas)
+        combox2['value'] = lst2
+        combox2['state'] = 'readonly'
+        combox2.grid(row=4, column=1)
+        Button(self, text="OK", command=dk, width=5).grid(row=5, column=0)
+        Button(self, text="Quit", command=self.destroy, width=5).grid(row=5, column=1)
 class frame1(tk.Frame):
     def __init__(self, parent, *args, **kwargs):
         super().__init__(parent, *args, **kwargs)
         ttk.Label(self, text="NHÓM 9", font="20", relief='raised').grid(row=0)
         lst = ("All", "L01", "L02", "L03", "L04", "L05")
+        
         global combox, data
         data = StringVar()
         combox = ttk.Combobox(self, textvariable=data)
@@ -154,8 +144,6 @@ class frame2(tk.Frame):
         scrollbar = ttk.Scrollbar(self, orient=tk.VERTICAL, command=tree.yview)
         tree.config(yscroll=scrollbar.set)
         scrollbar.grid(row=0, column=1, sticky='ns')
-
-
 class frame3(tk.Frame):
     def __init__(self, parent, *args, **kwargs):
         super().__init__(parent, *args, **kwargs)
@@ -164,19 +152,13 @@ class frame3(tk.Frame):
         Button(self, text="Sửa", width=15, command=update).grid(row=0, column=2)
         Button(self, text="Tìm kiếm", width=15, command=search).grid(row=0, column=3)
         Button(self, text="Quit", width=15, command=parent.destroy).grid(row=0, column=4)
-
-
-
-
 class App(tk.Tk):
     def __init__(self, *args, **kwargs):
         super().__init__(*args, **kwargs)
         frame1(self).pack()
         frame2(self).pack()
         frame3(self).pack()
-        self.configure(bg="pink")
-        self.geometry("1000x500")
-        self.title("github.com/cuongcamauit")
-
+        self.geometry("1024x500")
+        self.title("QuanLiSinhVien")
 ap = App()
 ap.mainloop()
