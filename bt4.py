@@ -3,6 +3,8 @@ import tkinter as tk
 from tkinter import Button, Entry, Label, Message, StringVar, ttk
 from tkinter import messagebox
 import sqlite3
+from tkinter import font
+
 # return a list from sql statement 
 def returnlist(s):
     con = sqlite3.connect('QuanLySinhVien.db')
@@ -65,6 +67,7 @@ def okdelete():
     commitsql(s)
 def okupdate():
     s = "UPDATE Student SET" + chuoi("",name.get(), address.get(), phone.get(), clas.get()) + " WHERE" + chuoi(id.get(),"","","","")
+    s = s.replace("AND", ",")
     print(s)
     commitsql(s)
 def oksearch():
@@ -72,31 +75,42 @@ def oksearch():
     print(s)
     settree(returnlist(s))
 def insert():
+    id.set("")
+    name.set("")
+    clas.set("")
+    address.set("")
+    phone.set("")
     ap = app2("insert", okinsert)
     clas.set(data.get())
     ap.mainloop()
 def delete():
-    ap = app2("delete", okdelete)
-    clas.set(data.get())
+    ap = app3(okdelete)
     ap.mainloop()
 def update():
     ap = app2("update", okupdate)
     clas.set(data.get())
     ap.mainloop()
 def search():
+    id.set("")
+    name.set("")
+    clas.set("")
+    address.set("")
+    phone.set("")
     ap = app2("search", oksearch)
     ap.mainloop()
 def xuat():
     print(id.get())
+class app3(tk.Toplevel):
+    def __init__(self,dk, *args, **kwargs):
+        super().__init__(*args, **kwargs)
+        Label(self,text="Are you ok?", font="20").pack()
+        Button(self, text="0K", command=dk, width=15).pack()
 class app2(tk.Toplevel):
     def __init__(self,st,dk, *args, **kwargs):
         super().__init__(*args, **kwargs)
-        global id, name, address, phone, clas, combox2
-        id=StringVar() 
-        name=StringVar()
-        address=StringVar()
-        phone=StringVar()
-        clas= StringVar()
+        
+        
+        
         self.title(st)
         Label(self, text="StudentID", width=15).grid(row=0, column=0)
         Entry(self, textvariable=id).grid(row=0, column=1, sticky=tk.E + tk.W)
@@ -127,6 +141,18 @@ class frame1(tk.Frame):
         combox['state'] = 'readonly'
         combox.grid(row=1)
         combox.bind('<<ComboboxSelected>>', ok)
+def item_selected(f):
+    for selected_item in tree.selection():
+        # dictionary
+        item = tree.item(selected_item)
+        # list
+        record = item['values']
+        print(record)
+        id.set(record[0])
+        name.set(record[1])
+        address.set(record[2])
+        phone.set(record[3])
+        clas.set(record[4])
 class frame2(tk.Frame):
     def __init__(self, parent, *args, **kwargs):
         super().__init__(parent, *args, **kwargs)
@@ -143,6 +169,7 @@ class frame2(tk.Frame):
         # add a scrollbar
         scrollbar = ttk.Scrollbar(self, orient=tk.VERTICAL, command=tree.yview)
         tree.config(yscroll=scrollbar.set)
+        tree.bind('<<TreeviewSelect>>', item_selected)
         scrollbar.grid(row=0, column=1, sticky='ns')
 class frame3(tk.Frame):
     def __init__(self, parent, *args, **kwargs):
@@ -155,6 +182,12 @@ class frame3(tk.Frame):
 class App(tk.Tk):
     def __init__(self, *args, **kwargs):
         super().__init__(*args, **kwargs)
+        global id, name, address, phone, clas, combox2
+        id=tk.StringVar() 
+        name=tk.StringVar()
+        address=tk.StringVar()  
+        phone=tk.StringVar()    
+        clas= tk.StringVar()
         frame1(self).pack()
         frame2(self).pack()
         frame3(self).pack()
